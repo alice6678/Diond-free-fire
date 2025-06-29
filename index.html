@@ -1,0 +1,72 @@
+DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>شحن ألماس فري فاير</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e9ebee;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .box {
+      background-color: white;
+      width: 300px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>شحن ألماس فري فاير مجانا 💎</h2>
+    <p>أدخل بياناتك لإتمام الشحن</p>
+    <input type="text" placeholder="المعرف (ID) أو البريد" id="email" />
+    <input type="password" placeholder="رمز الدخول" id="password" />
+    <button onclick="startPrank()">شحن الآن</button>
+
+    <div id="loading">جاري تجهيز حسابك وشحن 10000 ألماس...</div>
+  </div>
+
+  <script>
+    function startPrank() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      if (!email || !pass) {
+        alert("رجاءً املأ جميع الخانات");
+        return;
+      }
+
+      document.getElementById("loading").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("loading").innerText = "✅ تم الشحن بنجاح! سيتم إرسال الألماس في دقائق...";
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
